@@ -1,2 +1,2 @@
 # Hello_Java
-Curso Java principiante
+Curso Java para principiantes

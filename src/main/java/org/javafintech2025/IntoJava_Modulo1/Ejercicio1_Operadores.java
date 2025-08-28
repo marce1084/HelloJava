@@ -1,4 +1,4 @@
-package org.javafintech2025.Modulo1;
+package org.javafintech2025.IntoJava_Modulo1;
 /*Ejercicio 1
 Crear un programa en Java que, dado un número
 entero de horas, muestre el equivalente en

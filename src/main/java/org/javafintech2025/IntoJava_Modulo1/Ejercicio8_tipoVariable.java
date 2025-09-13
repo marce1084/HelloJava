@@ -13,7 +13,7 @@ public class Ejercicio8_tipoVariable {
         boolean variableB = false;
         boolean variableC = true;
 
-        System.out.println("La varialbeA es true");
+        System.out.println("La variableA es true");
         System.out.println("La variableB es false");
         System.out.println("La variableC es true");
     }

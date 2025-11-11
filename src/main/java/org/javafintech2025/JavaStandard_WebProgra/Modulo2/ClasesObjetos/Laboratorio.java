@@ -30,25 +30,34 @@ public class Laboratorio {
         // usamos un for para preguntar cada uno de los datos de las personas
         for (int i = 0; i < personas.length; i++) {
             // preguntamos los datos de las personas y podemos usar un objeto auxiliar
-            Persona personaAux = new Persona();
+           // Persona personaAux = new Persona();
 
             System.out.println("Ingrese el nombre de la persona [" + (i + 1) + "]: ");
-            personaAux.nombre = teclado.next();
+            String nombre = teclado.next();
 
             System.out.println("Ingrese el apellido de la persona [" + (i + 1) + "]: ");
-            personaAux.apellido = teclado.next();
+            String apellido = teclado.next();
 
             System.out.println("Ingrese el tipo de documento de la persona [" + (i + 1) + "]: ");
-            personaAux.TipoDocumento = teclado.next();
+            String TipoDocumento = teclado.next();
 
             System.out.println("Ingrese el numero de documento de la persona [" + (i + 1) + "]: ");
-            personaAux.NumeroDocumento = teclado.nextLong();
+            String NumeroDocumento = teclado.next();
 
-            System.out.println("Ingrese la edad de la persona [" + (i + 1) + "]: ");
-            personaAux.edad = teclado.nextInt();
+            // Creamos un Documento temporar y por constructor le mandamos los datos
+            Documento documento = new Documento(TipoDocumento, NumeroDocumento);
+            // creamos un objeto persona auxiliar para asignar a la posicion del vector
+            // correspondiente
+            // vemos la venta de utilizar variables auxiliares con el mismo nombre de los
+            // parametros
+            Persona personaAuxiliar = new Persona(nombre, apellido, documento);
 
-            // asignamos el objeto auxiliar al vector en la posicion i
-            personas[i] = personaAux;
+            // tambien podemos omitir el objeto documento y mandarlo instanciando
+            // directamente al constructor de persona
+            // Persona personaAuxiliar = new Persona(nombre, apellido, new
+            // Documento(tipoDocumento, numeroDocumento), edad);
+            // asignamos el objeto auxiliar a la posicion del vector correspondiente
+            personas[i] = personaAuxiliar;
             System.out.println();
         }
         // mostramos un salto de linea para diferenciar el titulo
@@ -58,9 +67,10 @@ public class Laboratorio {
         // solo a modo de ejemplo
         System.out.println("------------------ Listado de Personas ------------------");
         for (int i = 0; i < personas.length; i++) {
-            System.out.print("Persona [" + (i + 1) + "]: ");
             // mostramos los datos de la persona
-            personas[i].mostrarAtributos();
+            // al cambiar el metodo a uno con retorno lo podemos utilizar en donde
+            // necesitemos y no nos vamos limitados a solo imprimirlo en consola
+            System.out.println(personas[i].mostrarAtributos());
 
     }
         // cerramos el Scanner
